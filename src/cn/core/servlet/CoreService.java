@@ -24,7 +24,6 @@ public class CoreService {
      * @return
      */
     public String processMsg(HttpServletRequest req, HttpServletResponse resp) {
-        String msg = "";
         logger.info("处理微信请求...");
         Map<String, String> map = null;
         try {
@@ -33,6 +32,7 @@ public class CoreService {
             e.printStackTrace();
         }
 
+        String msg = "欢迎你：" + map.get("FromUserName");
         String msgType = map.get("MsgType");
         if ("event".equals(msgType)) { // 事件消息
             String eventType = map.get("Event");
@@ -43,7 +43,7 @@ public class CoreService {
                 if (eventKey != null && !"".equals(eventKey)) { // 带参数的二维码
                     //String scenceId = eventKey.substring(eventKey.indexOf("qrscene_"));
                 } else {
-
+                    
                 }
 
             } else if ("unsubscribe".equals(eventType)) { // 取消关注事件
@@ -58,7 +58,7 @@ public class CoreService {
 
             }
         } else { // 普通消息
-            msg = "欢迎你：" + map.get("FromUserName");
+            
         }
 
         return msg;

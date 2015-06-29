@@ -44,11 +44,15 @@ public class MenuManager {
         btn31.setType("view");
         ViewButton btn32 = new ViewButton();
         btn32.setUrl(Constant.SERVER_NAME + "/index");
-        btn32.setName("评价");
+        btn32.setName("点评");
         btn32.setType("view");
+        ViewButton btn33 = new ViewButton();
+        btn33.setUrl(Constant.SERVER_NAME + "/index");
+        btn33.setName("完善资料");
+        btn33.setType("view");
         ComplexButton mainBtn3 = new ComplexButton();
-        mainBtn3.setName("评价留言");
-        mainBtn3.setSub_button(new ViewButton[] { btn31, btn32 });
+        mainBtn3.setName("用户中心");
+        mainBtn3.setSub_button(new ViewButton[] { btn31, btn32, btn33});
 
         Menu menu = new Menu();
         menu.setButton(new Button[] { mainBtn1, mainBtn2, mainBtn3 });

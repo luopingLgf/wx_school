@@ -28,5 +28,6 @@
 	
 	<!-- 微信初始化 -->
 	<bean id="initWx" lazy-init="false" class="cn.core.servlet.WxInitServlet" init-method="init"/>
+	<bean id="coreService" class="cn.core.servlet.CoreService"/>
 
 </beans>

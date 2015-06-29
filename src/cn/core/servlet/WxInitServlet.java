@@ -16,21 +16,26 @@ public class WxInitServlet implements ServletConfigAware {
     }
     
     public void init(){
+        String reload = ConfigUtil.getValue("reload");
         String token = ConfigUtil.getValue("token");
         String appid = ConfigUtil.getValue("appid");
         String appsecret = ConfigUtil.getValue("appsecret");
         String menu = ConfigUtil.getValue("menu"); //此参数只有第一次需要生成菜单
+        Constant.TOKEN = token;
+        Constant.APPID = appid;
+        
+        if("0".equals(reload)){
+            System.out.println("不加载...");
+            return;
+        }
         
         Map<String, String> map_token = WxHttpUtil.getAccessToken(appid, appsecret);
         Map<String, String> map_jsapi = WxHttpUtil.getJsapiTicket(map_token.get("access_token"));
         Constant.JSAPI_TIKECT = map_jsapi.get("ticket");
-        Constant.APPID = appid;
         
         if("1".equals(menu)){
             MenuManager.createMenu(map_token.get("access_token"));
         }
-        
-        Constant.TOKEN = token;
     }
 
 }
