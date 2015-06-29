@@ -24,7 +24,7 @@ public class SignUtil {
 
         try {
             byte[] b = MessageDigest.getInstance("SHA-1").digest(sb.toString().getBytes());
-            signature_ = StringUtil.byteToHexStr(b);
+            signature_ = StringUtil.bytesToHexStr(b);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
