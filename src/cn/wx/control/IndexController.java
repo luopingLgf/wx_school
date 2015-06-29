@@ -22,4 +22,5 @@ public class IndexController {
     public String toIndex(Model model){
         return "index";
     }
+    
 }
