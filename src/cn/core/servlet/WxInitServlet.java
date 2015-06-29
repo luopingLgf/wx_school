@@ -20,7 +20,6 @@ public class WxInitServlet implements ServletConfigAware {
         String token = ConfigUtil.getValue("token");
         String appid = ConfigUtil.getValue("appid");
         String appsecret = ConfigUtil.getValue("appsecret");
-        String menu = ConfigUtil.getValue("menu"); //此参数只有第一次需要生成菜单
         Constant.TOKEN = token;
         Constant.APPID = appid;
         
@@ -32,10 +31,7 @@ public class WxInitServlet implements ServletConfigAware {
         Map<String, String> map_token = WxHttpUtil.getAccessToken(appid, appsecret);
         Map<String, String> map_jsapi = WxHttpUtil.getJsapiTicket(map_token.get("access_token"));
         Constant.JSAPI_TIKECT = map_jsapi.get("ticket");
-        
-        if("1".equals(menu)){
-            MenuManager.createMenu(map_token.get("access_token"));
-        }
+        MenuManager.createMenu(map_token.get("access_token"));
     }
 
 }
