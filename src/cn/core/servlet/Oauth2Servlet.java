@@ -25,7 +25,7 @@ public class Oauth2Servlet extends HttpServlet{
             logger.info("type = " + type + "，网页授权成功...");
             String page = "";
             if("11".equals(type)){ //点单请进
-                page = Constant.SERVER_NAME + "/order/index/" + oauth2.getString("openid");
+                page = Constant.SERVER_NAME + "/shop/list/" + oauth2.getString("openid");
             }
             resp.sendRedirect(page);
         }else{

@@ -6,10 +6,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("order")
-public class OrderController {
+@RequestMapping("shop")
+public class ShopController {
     /**
-     * 跳转到订单首页
+     * 跳转到店铺列表页面
+     * @param model
+     * @return
+     */
+    @RequestMapping("/list/{openid}")
+    public String toIndex(Model model){
+        return "shoplist";
+    }
+    
+    /**
+     * 跳转到某个店铺首页
      * @param openid
      * @param model
      * @return
