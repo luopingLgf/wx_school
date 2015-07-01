@@ -22,6 +22,7 @@ public class WxInitServlet implements ServletConfigAware {
         String appsecret = ConfigUtil.getValue("appsecret");
         Constant.TOKEN = token;
         Constant.APPID = appid;
+        Constant.APPSECRET = appsecret;
         
         if("0".equals(reload)){
             System.out.println("不加载...");

@@ -52,7 +52,7 @@ public class MenuManager {
         btn33.setType("view");
         ComplexButton mainBtn3 = new ComplexButton();
         mainBtn3.setName("用户中心");
-        mainBtn3.setSub_button(new ViewButton[] { btn31, btn32, btn33});
+        mainBtn3.setSub_button(new ViewButton[] { btn31, btn32, btn33 });
 
         Menu menu = new Menu();
         menu.setButton(new Button[] { mainBtn1, mainBtn2, mainBtn3 });

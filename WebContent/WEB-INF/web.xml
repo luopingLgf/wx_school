@@ -39,16 +39,16 @@
     <servlet-class>cn.core.servlet.WxAuthServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>WxInitServlet</servlet-name>
-    <servlet-class>cn.core.servlet.WxInitServlet</servlet-class>
+    <servlet-name>Oauth2Servlet</servlet-name>
+    <servlet-class>cn.core.servlet.Oauth2Servlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>WxAuthServlet</servlet-name>
     <url-pattern>/servlet/WxAuthServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>WxInitServlet</servlet-name>
-    <url-pattern>/servlet/WxInitServlet</url-pattern>
+    <servlet-name>Oauth2Servlet</servlet-name>
+    <url-pattern>/servlet/Oauth2Servlet</url-pattern>
   </servlet-mapping>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

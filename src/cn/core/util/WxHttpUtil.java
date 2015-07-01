@@ -28,6 +28,7 @@ public class WxHttpUtil {
     private static String access_token_url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET";
     private static String jsaip_ticket_url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?type=jsapi&access_token=";
     private static String menu_flush_url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN";
+    public static String oauth2_url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code";
     
     /**
      * 获取access_token
@@ -83,6 +84,18 @@ public class WxHttpUtil {
             }
         }
         
+    }
+    
+    /**
+     * 获取网页授权信息
+     * @param appid
+     * @param token
+     * @param code
+     * @return
+     */
+    public static JSONObject getOautho2(String appid, String appsecret, String code) {
+        String requestUrl = oauth2_url.replace("APPID", appid).replace("SECRET", appsecret).replace("CODE", code);
+        return httpsRequest(requestUrl, "GET", null);
     }
 
     /**
