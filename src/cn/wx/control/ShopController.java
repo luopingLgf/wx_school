@@ -14,7 +14,8 @@ public class ShopController {
      * @return
      */
     @RequestMapping("/list/{openid}")
-    public String toIndex(Model model){
+    public String toIndex(@PathVariable String openid, Model model){
+        model.addAttribute(openid);
         return "shoplist";
     }
     
@@ -24,9 +25,8 @@ public class ShopController {
      * @param model
      * @return
      */
-    @RequestMapping("/index/{openid}")
-    public String index(@PathVariable String openid, Model model){
-        model.addAttribute(openid);
+    @RequestMapping("/index")
+    public String index(Model model){
         return "shop";
     }
 }

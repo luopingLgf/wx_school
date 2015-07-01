@@ -16,7 +16,7 @@
 <script src="./../../js/common.js"></script>
 
 <link rel="stylesheet" type="text/css" href="./../../css/common.css">
-<link rel="stylesheet" type="text/css" href="./../../css/index.css">
+<link rel="stylesheet" type="text/css" href="./../../css/list.css">
 <style type="text/css">
 	#wrapperbody {
 		border-bottom: 1px solid #cacaca;
@@ -123,7 +123,7 @@
 							'tap',
 							function() {
 								var shop_id = $(this).attr('id');
-								window.location.href = '/app.php?c=show&a=god&admin_id='
+								window.location.href = '../index?c=show&a=god&admin_id='
 										+ admin_id
 										+ '&shop_id='
 										+ shop_id
@@ -131,7 +131,7 @@
 										+ wxusername
 										+ '&customerid='
 										+ lewaimai_customer_id
-										+ '&backallshopurltype=allshop#order';
+										+ '&backallshopurltype=allshop#index';
 							});
 
 			$('#shopsearch').keyup(function() {
@@ -215,7 +215,7 @@
 						<table style="width: 100%;">
 							<tbody>
 								<tr>
-									<td class="allshop-shopimg"><img src="%E5%BA%97%E9%93%BA%E5%88%97%E8%A1%A8_files/53fab033f191d.jpg" style="width: 100%;"></td>
+									<td class="allshop-shopimg"><img src="./../../img/53fab033f191d.jpg" style="width: 100%;"></td>
 									<td class="allshop-shopdetail">
 										<h3 class="shopname">享买科技第一分店</h3>
 										<p class="shopprice">起送价格：￥3（20元免外送费）</p>
@@ -235,7 +235,7 @@
 						<table style="width: 100%;">
 							<tbody>
 								<tr>
-									<td class="allshop-shopimg"><img src="%E5%BA%97%E9%93%BA%E5%88%97%E8%A1%A8_files/53fab033f191d.jpg" style="width: 100%;"></td>
+									<td class="allshop-shopimg"><img src="./../../img/53fab033f191d.jpg" style="width: 100%;"></td>
 									<td class="allshop-shopdetail">
 										<h3 class="shopname">享买科技第二店铺</h3>
 										<p class="shopprice">起送价格：￥10（10元免外送费）</p>
