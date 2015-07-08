@@ -23,7 +23,7 @@
 	<bean id="jspViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/page/" />
-		<property name="suffix" value=".html" />
+		<property name="suffix" value=".jsp" />
 	</bean>
 	
 	<!-- 微信初始化 -->
